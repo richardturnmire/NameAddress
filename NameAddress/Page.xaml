@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="NameAddress.Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:mybook="clr-namespace:C1.Silverlight.Extended;assembly=C1.Silverlight.Extended"
+	xmlns:sl="clr-namespace:C1.Silverlight;assembly=C1.Silverlight"
+    xmlns:gl="clr-namespace:C1.Silverlight.DataGrid;assembly=C1.Silverlight.DataGrid"
+             
+    >
+    <Grid x:Name="LayoutRoot" Background="LightBlue" Width="Auto" Height="Auto" MinHeight="600" MinWidth="800">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel  Orientation="Horizontal"  Background="DodgerBlue" Grid.Row="0">
+                      
+        </StackPanel>
+        <Grid Grid.Row="1">
+        <mybook:C1Book  Name="booker" ShowInnerShadows="True" ShowOuterShadows="True" ShowPageFold="Always" Visibility="Visible" >
+          
+
+            <mybook:C1Book.LeftPageTemplate>
+                <ControlTemplate>
+                    <Border BorderThickness="1,1,2,2" BorderBrush="Gray" Background="WhiteSmoke">
+                        <StackPanel Margin="10,10,25,10">
+                            <TextBlock Text="C1Book Sample" FontSize="9"
+                        Margin="0,0,0,10" HorizontalAlignment="Left" />
+                            <mybook:C1Accordion >
+                                <mybook:C1AccordionItem Height="Auto" Width="Auto" Background="#FFA64B4B" Content="C1AccordionItem"/>
+                            </mybook:C1Accordion>
+                            <ContentPresenter>
+                           
+
+                            </ContentPresenter> 
+                        </StackPanel>
+                    </Border>
+                            
+                </ControlTemplate>
+            </mybook:C1Book.LeftPageTemplate>
+
+           
+
+            <mybook:C1Book.RightPageTemplate>
+                <ControlTemplate>
+                    <Border BorderThickness="1,1,2,2" BorderBrush="Black" Background="White">
+                        <StackPanel Margin="25,10,15,10" Orientation="Vertical">
+                            <TextBlock Text="C1.Silverlight.Extended.dll" FontSize="9"
+                         HorizontalAlignment="Right" Margin="0,0,0,10" />
+
+                            <sl:C1WrapPanel Name="Wrap1" Height="300" Width="Auto" Background="Aqua" />
+                            <sl:C1WrapPanel Name="Wrap2" Height="300" Width="Auto" Background="Coral" />
+                            <gl:C1DataGrid  Name="Dg1" Height="200" Width="Auto" Background="LightSlateGray" />
+                           
+                            <ContentPresenter />
+                          
+
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </mybook:C1Book.RightPageTemplate>
+           
+
+            <TextBlock Text="Page 1"/>
+            <TextBlock Text="Page 2"/>
+           
+        </mybook:C1Book>
+       </Grid>
+    
+        <StackPanel  Orientation="Horizontal"  Background="DodgerBlue" Grid.Row="2">
+
+
+
+        </StackPanel>
+    </Grid>
+</UserControl>
